@@ -1,6 +1,8 @@
 require 'rspec/core/rake_task'
 require 'bundler'
 
+ENV["RUBYGEMS_HOST"] = "http://localhost:2000"
+
 Bundler::GemHelper.install_tasks
 
 task :default => :spec
@@ -20,8 +22,7 @@ namespace :spec do
   end
 end
 
-desc "Push the latest gem"
-task :push => :build do
-  ENV["RUBYGEMS_HOST"] = "http://localhost:2000"
-  system "gem push pkg/e20_unit-*.gem"
+task :push do
+  puts "Use rake release instead"
+  exit 1
 end
