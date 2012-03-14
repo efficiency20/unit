@@ -20,3 +20,6 @@ units:
   horsepower:
     sym: hp
     def: 550 ft * lbf / second
+  seer:
+    sym: SEER
+    def: btu / watt_hour
