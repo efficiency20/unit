@@ -16,6 +16,7 @@ def Unit(*args)
   unit ||= []
   system.validate_unit(unit)
 
+  raise TypeError, "value cannot be nil" if args.length != 0 && args[0].nil?
   raise ArgumentError, 'wrong number of arguments' unless args.empty?
 
   Unit.new(value, unit, system)

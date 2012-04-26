@@ -71,6 +71,7 @@ describe 'Unit' do
   end
 
   it "should not support adding anything but numeric unless object is coerceable" do
+    expect { Unit(nil, 'm') }.to raise_error(TypeError)
     expect { Unit(1) + 'string'}.to raise_error(TypeError)
     expect { Unit(1) + []}.to raise_error(TypeError)
     expect { Unit(1) + :symbol }.to raise_error(TypeError)
